@@ -1,0 +1,31 @@
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  padding: 10vh 0;
+}
+.playground {
+  border: 1px solid #333;
+  background-color: #eee;
+  width: 80vw;
+  margin: 0 auto;
+  padding: 1em 3em 3em;
+  header {
+    font-size: 2em;
+    text-align: center;
+    color: #ce1126;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+    border-bottom: 1px solid #999;
+  }
+}
+.gallery-list {
+  margin: 0;
+  padding: 0;
+  .gallery-item {
+    display: inline-block;
+    list-style: none;
+    border: 1px solid #ddd;
+    padding: 3px;
+    margin: 3px;
+  }
+}

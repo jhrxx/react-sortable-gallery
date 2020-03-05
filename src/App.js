@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import './style.scss';
+import data from './mock';
 
 function App() {
+  console.log('data: ', data.list)
+  const galleryItems = data.list.map((item) =>
+    <li className="gallery-item" key={item.id}>
+      <img src={item.image} alt={item.title}/>
+    </li>
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <article className="App">
+      <section className="playground">
+        <header>Playground</header>
+        <ul className="gallery-list">
+          {galleryItems}
+        </ul>
+      </section>
+    </article>
   );
 }
 
