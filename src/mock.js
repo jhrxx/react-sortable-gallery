@@ -1,7 +1,9 @@
 // 使用 Mock
-const Mock = require('mockjs')
+import Mock from 'mockjs'
+// const Mock = require('mockjs')
 // const {Random} = Mock
-var data = Mock.mock({
+
+export default Mock.mock({
     // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
     'list|50-90': [{
         // 属性 id 是一个自增数，起始值为 1，每次增 1
@@ -13,4 +15,4 @@ var data = Mock.mock({
     }]
 })
 // 输出结果
-export default data
+// export default data
