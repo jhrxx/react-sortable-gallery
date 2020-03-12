@@ -1,26 +1,21 @@
 import React from 'react';
-// import './App.css';
 import data from './mock';
 
 
 function App() {
-  const galleryItems = data.list.map((item) =>
+  const imageUrl = (index) => {
+    let id = index%36+1
+    id = id<10?`0${id}`:`${id}`
+    return `../images/art_veider_${id}.jpg`
+  }
+  const galleryItems = data.list.map((item, index) =>
     <li className="gallery-item" key={item.id}>
-      <img src={item.image} alt={item.title} />
+      <img src={imageUrl(index)} alt={item.title} />
     </li>
   );
 
   return (
     <article className="App">
-      <ul>
-        <li class="badge">default</li>
-        <li class="badge badge--primary">primary</li>
-        <li class="badge badge--secondary">secondary</li>
-        <li class="badge badge--dark">dark</li>
-        <li class="badge badge--success">success</li>
-        <li class="badge badge--warning">warning</li>
-        <li class="badge badge--error">error</li>
-      </ul>
       <section className="playground">
         <header>Playground</header>
         <ul className="gallery-list">

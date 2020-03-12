@@ -22,10 +22,11 @@
   margin: 0;
   padding: 0;
   .gallery-item {
+    max-width: 100px;
     display: inline-block;
     list-style: none;
     border: 1px solid #ddd;
-    padding: 3px;
-    margin: 3px;
+    padding: 5px;
+    margin: 5px;
   }
 }

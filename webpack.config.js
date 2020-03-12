@@ -11,9 +11,17 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader'
+                loader: 'eslint-loader',
+                enforce: "pre",
+                include: [path.resolve(__dirname, 'src')], // 指定检查的目录
+                options: { // 这里的配置项参数将会被传递到 eslint 的 CLIEngine 
+                    cache: true,
                 }
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
             },
             {
                 test: /\.html$/,
@@ -39,10 +47,8 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['', '.js', '.jsx', '.css'],
-        modulesDirectories: [
-            'node_modules'
-        ]
+        extensions: ['.js', '.jsx', '.css', '.json'],
+        modules: [path.resolve(__dirname, 'src'), 'node_modules']
     },
     plugins: [
         new HtmlWebPackPlugin({
@@ -50,5 +56,5 @@ module.exports = {
             filename: 'index.html',
             template: './src/index.html'
         })
-    ]
+    ],
 };
