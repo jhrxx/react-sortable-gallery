@@ -1,16 +1,18 @@
+import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import data from './mock';
 
-
-function App() {
+const App = () => {
   const imageUrl = (index) => {
-    let id = index%36+1
-    id = id<10?`0${id}`:`${id}`
+    let id = index % 36 + 1
+    id = id < 10 ? `0${id}` : `${id}`
     return `../images/art_veider_${id}.jpg`
   }
   const galleryItems = data.list.map((item, index) =>
     <li className="gallery-item" key={item.id}>
+      <i>{index + 1}</i>
       <img src={imageUrl(index)} alt={item.title} />
+      {/* <span title={item.desc}>{item.title}</span> */}
     </li>
   );
 
@@ -26,4 +28,4 @@ function App() {
   );
 }
 
-export default App;
+export default hot(App);

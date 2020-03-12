@@ -26,7 +26,17 @@
     display: inline-block;
     list-style: none;
     border: 1px solid #ddd;
-    padding: 5px;
     margin: 5px;
+    position: relative;
+    i {
+      border: 1px solid #f60;
+      color: #f60;
+      position: absolute;
+      left: 0;
+      top:0;
+      min-width: 25px;
+      text-align: center;
+      border-radius: 2px;
+    }
   }
 }

@@ -1,17 +1,66 @@
 module.exports = {
-    root: true,    
-    parserOptions: {
-        ecmaVersion: 5,
-        sourceType: 'module'
+    "root": true,
+    "parser": "babel-eslint",
+    "plugins": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "commonjs": true
     },
-    env: {
-        browser: true,
+    "installedESLint": true,
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true,
+            "arrowFunctions": true,
+            "classes": true,
+            "modules": true,
+            "defaultParams": true
+        },
+        "sourceType": "module"
     },
-    rules: {
+    "rules": {
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
         "indent": ["error", 2],
         "quotes": ["error", "double"],
         "semi": ["error", "always"],
-        "no-console": "error",
-        "arrow-parens": 0
+        // "no-console": "error",
+        "arrow-parens": 0,
+
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        //"semi": ["error", "always"],
+        "no-empty": 0,
+        "comma-dangle": 0,
+        "no-unused-vars": 0,
+        // "no-console": 0,
+        "no-const-assign": 2,
+        "no-dupe-class-members": 2,
+        "no-duplicate-case": 2,
+        "no-extra-parens": [2, "functions"],
+        "no-self-compare": 2,
+        "accessor-pairs": 2,
+        "comma-spacing": [2, {
+            "before": false,
+            "after": true
+        }],
+        "constructor-super": 2,
+        "new-cap": [2, {
+            "newIsCap": true,
+            "capIsNew": false
+        }],
+        "new-parens": 2,
+        "no-array-constructor": 2,
+        "no-class-assign": 2,
+        "no-cond-assign": 2,
+        "no-mixed-spaces-and-tabs": 0
     }
 }

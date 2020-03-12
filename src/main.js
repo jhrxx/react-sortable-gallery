@@ -1,7 +1,10 @@
 
+import 'react-hot-loader'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App.js'
-import './index.scss';
+import './index.scss'
 
-ReactDOM.render(<App/>, document.getElementById('app'))
+var rootEl = document.getElementById('app')
+
+ReactDOM.render(<App />, rootEl)

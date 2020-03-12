@@ -4,7 +4,8 @@
   "description": "[![Badge](https://img.shields.io/badge/link-996.icu-%23FF4D5B.svg)](https://996.icu/#/en_US)\r [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
+    "lint": "eslint --ext .js src",
+    "start": "webpack-dev-server --open --mode development --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -37,14 +38,18 @@
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-import": "^1.13.0",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
     "eslint-loader": "^3.0.3",
+    "eslint-plugin-react": "^7.19.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mockjs": "^1.1.0",
     "node-sass": "^4.13.1",
+    "react-hot-loader": "^4.12.19",
     "sass-loader": "^8.0.2",
     "sierra-library": "^3.5.0",
     "style-loader": "^1.1.3",

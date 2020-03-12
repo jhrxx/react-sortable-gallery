@@ -1,7 +1,8 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
-    entry: './src/main.js',
+    entry: [ "react-hot-loader/patch", "./src/main.js"],
+    // entry: './src/main.js',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
@@ -9,12 +10,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.js[x]$/,
                 exclude: /node_modules/,
                 loader: 'eslint-loader',
                 enforce: "pre",
                 include: [path.resolve(__dirname, 'src')], // 指定检查的目录
                 options: { // 这里的配置项参数将会被传递到 eslint 的 CLIEngine 
+                    fix: true,
                     cache: true,
                 }
             },
